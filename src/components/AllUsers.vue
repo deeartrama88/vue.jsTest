@@ -2,7 +2,7 @@
     <div class="users">
         <h2>All users:</h2>
         <ul>
-            <li v-for="user in users">
+            <li v-for="user in users" v-show="!user.registered">
                 {{user.name}}, his age is: {{user.age}}
                 <button v-on:click="register(user)">register</button>
             </li>
@@ -21,7 +21,7 @@
         },
         methods: {
             register(user){
-                this.$emit('deleteUser', user);
+                this.$emit('register', user);
             },
         }
     }

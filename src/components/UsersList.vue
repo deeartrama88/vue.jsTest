@@ -1,7 +1,7 @@
 <template>
     <div class="allUsersList">
         <h1>{{ msg }}</h1>
-        <AllUsers @deleteUser="deleteUser":users="users"></AllUsers>
+        <AllUsers @register="register":users="users"></AllUsers>
         <RegisteredUsers @unRegister="unRegister":registeredUsers="registeredUsers"></RegisteredUsers>
     </div>
 </template>
@@ -26,11 +26,23 @@
             }
         },
         methods: {
-            deleteUser(user){
-                console.log('this one gonna be registered');
+            register(user){
+                let thisUser = this.users.find(function(user2){
+                    if(user2.id === user.id){
+                        user2.registered = true;
+                        return user2;
+                    };
+                });
+                this.registeredUsers.push(thisUser);
             },
             unRegister(user){
-                console.log('this one gonna be un registered');
+                let thisUser = this.users.find(function(user2){
+                    if(user2.id === user.id){
+                        user2.registered = false;
+                        return user2;
+                    };
+                });
+                this.registeredUsers.splice(this.registeredUsers.indexOf(thisUser), 1)
             }
         },
         components: {
