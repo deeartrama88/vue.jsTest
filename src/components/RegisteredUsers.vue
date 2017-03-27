@@ -12,7 +12,11 @@
 <script>
 export default {
   name: 'hello',
-  props: ['registeredUsers'],
+  computed: {
+      registeredUsers(){
+          return this.$store.state.registeredUsers;
+      }
+  },
   data () {
     return {
         msg: 'Welcome to Your Vue.js App',
@@ -20,7 +24,13 @@ export default {
   },
     methods: {
         unRegister(user){
-            this.$emit('unRegister', user);
+            let thisUser = this.$store.state.users.find(function(user2){
+                if(user2.id === user.id){
+                    user2.registered = false;
+                    return user2;
+                };
+            });
+            this.$store.state.registeredUsers.splice(this.$store.state.registeredUsers.indexOf(thisUser), 1)
         }
     }
 }
