@@ -11,22 +11,20 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex';
     export default {
         name: 'allUsers',
         computed: {
-            users(){
-                return this.$store.state.users;
-            }
+            ...mapGetters({
+                users: "allUsers",
+            })
         },
         methods: {
             register(user){
-                let thisUser = this.$store.state.users.find(function(user2){
-                    if(user2.id === user.id){
-                        user2.registered = true;
-                        return user2;
-                    };
-                });
-                this.$store.state.registeredUsers.push(thisUser);
+                this.$store.commit({
+                    type: "register",
+                    userId: user.id
+                })
             },
         }
     }

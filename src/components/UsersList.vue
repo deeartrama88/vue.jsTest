@@ -15,11 +15,7 @@
         data () {
             return {
                 msg: 'All Users list: ',
-
             }
-        },
-        methods: {
-
         },
         components: {
             AllUsers,
