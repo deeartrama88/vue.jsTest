@@ -2,7 +2,9 @@
   <div id="app">
     <myHeader></myHeader>
     <img src="./assets/logo.png">
-    <router-view></router-view>
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
     <myFooter></myFooter>
   </div>
 </template>
@@ -22,12 +24,5 @@
 
 <style lang="scss">
   @import '../static/css/main.scss';
-  #app {
-    /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
+
 </style>
