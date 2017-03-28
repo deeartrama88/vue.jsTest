@@ -39,5 +39,10 @@ export const store = new Vuex.Store({
             user.registered = false;
             state.registeredUsers.splice(state.registeredUsers.indexOf(user), 1);
         }
+    },
+    actions: {
+        register(context, payload) {
+            context.commit('register', payload);
+        }
     }
 })

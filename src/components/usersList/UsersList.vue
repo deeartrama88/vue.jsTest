@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import AllUsers from '../components/AllUsers'
-    import RegisteredUsers from '../components/RegisteredUsers'
+    import AllUsers from './AllUsers'
+    import RegisteredUsers from './RegisteredUsers'
 
     export default {
         name: 'AllUsersList',
