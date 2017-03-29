@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700');
 @import './basicColors.scss';
 #app {
   width: 100%;
   max-width: 1200px;
   margin: auto;
   font-family: "Roboto", san-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -32,7 +33,7 @@ ul {
   vertical-align: top;
 }
 
-
+// ANIMATION FOR PAGE ENTER AND LEAVE(ROUTES)
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
@@ -43,11 +44,65 @@ ul {
 }
 .slide-fade-enter, .slide-fade-leave-to
   /* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(10px);
+  //transform: translateX(10px);
   position: absolute;
   top:0;
   opacity: 0;
 }
+// ANIMATION FOR PAGE ENTER AND LEAVE END
 
 // HEADER STYLES
+.header {
+  border-bottom: 5px solid $mainBlueColor;
+  text-align: center;
+}
+.headerMenuTopLine {
+  span {
+    font-size: 40px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    padding: 13px 5px 5px;
+  }
+}
+.headerMenuBottomLine, .footerMenuBottomLine {
+  a {
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: $mainBlueColor;
+    text-decoration: none;
+    
+    &:hover {
+      background: #bce5ff;
+    }
+
+   &.menuActiveLink:hover {
+     background: lighten($mainBlueColor, 10%);
+   }
+  }
+}
+a.menuActiveLink {
+  background: $mainBlueColor;
+  color: white;
+  text-decoration: none;
+}
+.join {
+  transition: all .3s ease;
+  border: 5px solid $mainBlueColor;
+  font-size: 30px;
+  font-weight: bold;
+  color: $mainBlueColor;
+  padding: 20px 50px;
+  background: none;
+  width: 50%;
+  margin: 40px 0;
+  cursor: pointer;
+
+  &:hover {
+    background: $mainBlueColor;
+    color: #fff;
+  }
+}
+// FOOTER STYLE
 

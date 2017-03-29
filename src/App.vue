@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <myHeader></myHeader>
-    <img src="./assets/logo.png">
     <transition name="slide-fade">
       <router-view></router-view>
     </transition>
@@ -24,5 +23,6 @@
 
 <style lang="scss">
   @import '../static/css/main.scss';
+  @import '../static/css/font-awesome.min.css';
 
 </style>

@@ -35,33 +35,4 @@
 <style lang="scss" scoped>
     @import '../../static/css/basicColors.scss';
 
-    .header {
-        border-bottom: 5px solid $mainBlueColor;
-        text-align: center;
-    }
-    .headerMenuTopLine {
-        span {
-            font-size: 40px;
-            font-weight: bold;
-            display: inline-block;
-            vertical-align: top;
-            padding: 13px 5px 5px;
-        }
-    }
-    .headerMenuBottomLine {
-        a {
-            display: inline-block;
-            padding: 5px 10px;
-            font-weight: bold;
-            color: $mainBlueColor;
-            text-decoration: none;
-        }
-    }
-    a.menuActiveLink {
-        background: $mainBlueColor;
-        color: white;
-        text-decoration: none;
-    }
-
-
 </style>
